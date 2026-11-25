@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Book blood tests, diagnostic packages and home sample collection at Lifekare Diagnostic Lab, Chagallu.">
+  <meta name="theme-color" content="#087f8c">
+  <title>Lifekare Diagnostic Lab | Chagallu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Lifekare home">
+    <span class="brand-mark">L+</span><span><strong>Lifekare</strong><small>DIAGNOSTIC LAB</small></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+  <nav id="mainNav">
+    <a href="#home">Home</a><a href="#tests">Tests & Prices</a><a href="#packages">Packages</a>
+    <a href="#booking">Book Test</a><a href="#reports">Reports</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="header-call" href="tel:7207009739">Call: 7207009739</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="eyebrow">YOUR HEALTH, OUR PRIORITY</span>
+    <h1>Accurate testing.<br><em>Trusted results.</em></h1>
+    <p>Book diagnostic tests at our laboratory or request convenient home sample collection in our service area.</p>
+    <div class="hero-actions"><a class="btn primary" href="#booking">Book an Appointment</a><a class="btn light" href="#tests">Explore Tests</a></div>
+    <div class="trust-line"><span>✓ Simple booking</span><span>✓ Clear pricing</span><span>✓ Home collection requests</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="pulse">✚</div><h3>Need a test?</h3><p>Choose your test, date and available time slot.</p>
+    <a href="#booking" class="text-link">Start booking →</a>
+    <div class="hero-hours"><span>OPENING HOURS</span><strong>6:30 AM – 9:30 PM</strong></div>
+  </div>
+</section>
+
+<section class="quick-info">
+  <div><span class="quick-icon">⌖</span><span><b>Visit our lab</b><small>Chagallu, Andhra Pradesh</small></span></div>
+  <div><span class="quick-icon">⌂</span><span><b>Home collection</b><small>Request a home visit</small></span></div>
+  <div><span class="quick-icon">◷</span><span><b>Working hours</b><small>6:30 AM – 9:30 PM</small></span></div>
+  <div><span class="quick-icon">☎</span><span><b>Call us</b><small>7207009739</small></span></div>
+</section>
+
+<section class="section" id="tests">
+  <div class="section-heading"><div><span class="eyebrow">TEST CATALOGUE</span><h2>Popular tests & prices</h2><p>Illustrative prices shown below. Confirm the current price with the laboratory before booking.</p></div></div>
+  <div class="catalog-tools"><input id="testSearch" type="search" placeholder="Search tests (e.g. CBC, thyroid)…" aria-label="Search tests"><select id="categoryFilter" aria-label="Filter test category"><option value="all">All categories</option><option>Blood</option><option>Diabetes</option><option>Liver</option><option>Kidney</option><option>Thyroid</option><option>Vitamin</option><option>Urine</option></select></div>
+  <div class="test-grid" id="testGrid"></div>
+</section>
+
+<section class="section soft" id="packages">
+  <div class="section-heading"><div><span class="eyebrow">HEALTH PACKAGES</span><h2>Checkup packages</h2><p>Sample package prices and contents. Lab can edit these before publishing.</p></div></div>
+  <div class="package-grid" id="packageGrid"></div>
+</section>
+
+<section class="section booking-section" id="booking">
+  <div class="section-heading"><div><span class="eyebrow">ONLINE APPOINTMENT</span><h2>Book your test</h2><p>Choose tests and provide the details below. Your request will be saved on this device in demo mode.</p></div><span class="demo-badge" id="modeBadge">DEMO MODE</span></div>
+  <form id="bookingForm" class="booking-form">
+    <div class="form-block">
+      <h3>1. Select tests</h3>
+      <div id="bookingTestList" class="booking-test-list"></div>
+      <div class="selected-total"><span>Selected total</span><strong id="selectedTotal">₹0</strong></div>
+    </div>
+    <div class="form-block">
+      <h3>2. Appointment details</h3>
+      <div class="choice-row">
+        <label class="choice"><input type="radio" name="visitType" value="Lab visit" checked> <span>Lab visit</span></label>
+        <label class="choice"><input type="radio" name="visitType" value="Home collection"> <span>Home collection</span></label>
+      </div>
+      <div class="form-grid">
+        <label>Patient full name *<input name="name" required maxlength="100" autocomplete="name"></label>
+        <label>Mobile number *<input name="phone" required inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile number"></label>
+        <label>Age *<input name="age" required type="number" min="1" max="120"></label>
+        <label>Gender *<select name="gender" required><option value="">Select</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select></label>
+        <label>Email (optional)<input name="email" type="email" autocomplete="email"></label>
+        <label>Appointment date *<input name="date" id="appointmentDate" type="date" required></label>
+        <label>Time slot *<select name="slot" id="timeSlot" required><option value="">Choose a date first</option></select></label>
+        <label>Payment method *<select name="payment" required><option value="">Select payment</option><option>UPI (Google Pay / PhonePe)</option><option>Cash at laboratory</option><option>Cash at home collection</option></select></label>
+        <label class="full-width">Address / PIN code <textarea name="address" rows="2" placeholder="Required for home collection"></textarea></label>
+        <label class="full-width">Notes (optional)<textarea name="notes" rows="2" placeholder="Any relevant booking notes"></textarea></label>
+      </div>
+      <p class="hint">Fasting and preparation requirements vary by test. Please confirm instructions with the lab before sample collection.</p>
+      <label class="consent"><input type="checkbox" required> I confirm that the details provided are correct and agree to be contacted about this booking.</label>
+      <button class="btn primary submit-btn" type="submit">Submit booking request</button>
+      <p class="form-message" id="bookingMessage" role="status"></p>
+    </div>
+  </form>
+</section>
+
+<section class="section soft" id="reports">
+  <div class="report-box">
+    <div><span class="eyebrow">PATIENT SERVICES</span><h2>Looking for your test report?</h2><p>Contact the laboratory with your booking ID and registered mobile number. Secure online report delivery can be enabled after backend setup.</p></div>
+    <a class="btn primary" href="https://wa.me/917207009739?text=Hello%20Lifekare%20Diagnostic%20Lab%2C%20I%20would%20like%20to%20enquire%20about%20my%20test%20report." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="about-grid"><div><span class="eyebrow">ABOUT OUR LAB</span><h2>Lifekare Diagnostic Lab</h2><p>We aim to make diagnostic testing easier for people in and around Chagallu. Use this website to explore test information, request appointments and contact the laboratory.</p><p><strong>Important:</strong> Test prices, test availability, sample preparation, report turnaround times and home collection coverage must be confirmed directly with the laboratory.</p></div><div class="about-note"><span class="big-plus">✚</span><h3>Care starts with clarity.</h3><p>For urgent medical concerns, contact a qualified healthcare professional or emergency service.</p></div></div>
+</section>
+
+<section class="section contact-section" id="contact">
+  <div class="section-heading"><div><span class="eyebrow">GET IN TOUCH</span><h2>Contact Lifekare</h2><p>Call, email or visit the laboratory.</p></div></div>
+  <div class="contact-grid">
+    <div class="contact-card"><span>☎</span><h3>Phone / WhatsApp</h3><p>7207009739</p><a href="tel:7207009739">Call laboratory →</a><br><a href="https://wa.me/917207009739" target="_blank" rel="noopener">WhatsApp →</a></div>
+    <div class="contact-card"><span>✉</span><h3>Email</h3><p>gradetastic@gmail.com</p><a href="mailto:gradetastic@gmail.com">Send an email →</a></div>
+    <div class="contact-card"><span>⌖</span><h3>Address</h3><p>Kapula Gudi D Street, Chagallu, Chagallu Mandal, East Godavari District, Andhra Pradesh – 534342, India.</p><a href="https://www.google.com/maps/search/?api=1&query=Kapula%20Gudi%20D%20Street%2C%20Chagallu%2C%20Andhra%20Pradesh%20534342" target="_blank" rel="noopener">Find directions →</a></div>
+    <div class="contact-card"><span>◷</span><h3>Working hours</h3><p>6:30 AM – 9:30 PM</p><small>Daily schedule should be confirmed with the lab.</small></div>
+  </div>
+</section>
+</main>
+
+<footer><a class="brand footer-brand" href="#home"><span class="brand-mark">L+</span><span><strong>Lifekare</strong><small>DIAGNOSTIC LAB</small></span></a><p>Kapula Gudi D Street, Chagallu, Andhra Pradesh – 534342</p><p>© <span id="year"></span> Lifekare Diagnostic Lab. All rights reserved.</p><small>Website information is not medical advice. Confirm test details and prices with the laboratory.</small></footer>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
