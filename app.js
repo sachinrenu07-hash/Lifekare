@@ -80,7 +80,7 @@ function init(){
     current.push(booking);localStorage.setItem("lifekareBookings",JSON.stringify(current));
     $("bookingMessage").textContent=`Booking request saved on this device. Your reference ID is ${booking.id}. Please call 9701096777 to confirm availability.`;
     showToast("Request saved. Reference: "+booking.id);
-    const receipt=`Lifekare Diagnostic Lab\nBooking reference: ${booking.id}\nPatient: ${booking.name}\nMobile: ${booking.phone}\nType: ${booking.visitType}\nDate: ${booking.date}\nTime: ${booking.slot}\nTests: ${tests.map(t=>t.name).join(", ")}\nIllustrative total: ${money(total)}\nPayment: ${booking.payment}\nStatus: Request received (not yet confirmed)\nPlease call 7207009739 to confirm.`;
+    const receipt=`Lifekare Diagnostic Lab\nBooking reference: ${booking.id}\nPatient: ${booking.name}\nMobile: ${booking.phone}\nType: ${booking.visitType}\nDate: ${booking.date}\nTime: ${booking.slot}\nTests: ${tests.map(t=>t.name).join(", ")}\nIllustrative total: ${money(total)}\nPayment: ${booking.payment}\nStatus: Request received (not yet confirmed)\nPlease call 9701096777 to confirm.`;
     const blob=new Blob([receipt],{type:"text/plain"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`Lifekare-${booking.id}.txt`;a.click();URL.revokeObjectURL(url);
     selected.clear();form.reset();$("bookingForm").elements.address.required=false;renderBookingTests();refreshSlots();
   });
