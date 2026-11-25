@@ -37,7 +37,7 @@ For a real public booking system, connect a secure backend and database (for exa
 ## Business details currently configured
 - Lifekare Diagnostic Lab
 - Kapula Gudi D Street, Chagallu, Chagallu Mandal, East Godavari District, Andhra Pradesh – 534342, India
-- Phone / WhatsApp: 7207009739
+- Phone / WhatsApp: 9701096777
 - Email: gradetastic@gmail.com
 - Working hours: 6:30 AM – 9:30 PM
 
